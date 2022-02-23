@@ -1,0 +1,304 @@
+@charset "UTF-8";
+
+
+* {
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+    
+}
+
+body {
+    margin: 4em;
+    padding: 1em;
+    font-family: 'Barlow', sans-serif;
+    /* font-size: 48px; */
+    line-height: 2em;
+    
+}
+
+header nav {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+
+h1 {
+    text-transform: uppercase;
+    font-size: 70px;
+    font-weight:bolder;
+    line-height: 1em;
+    margin-bottom: 0.2em;
+    max-width: 30%;
+    color: #162542
+}
+
+.top-section > p {
+    text-align: left;
+    margin-bottom: 1em;
+    font-size: 18px;
+    line-height: 26px;
+    font-style: normal;
+    max-width: 65%;
+    color: #7b8bad;
+    
+}
+
+.top-section > span {
+    font-size: 16px;
+    color: #7b8bad;
+    margin-left: 2em;
+    font-weight: 700;
+    text-transform: uppercase;
+    
+
+}
+
+button {
+    /* align-self: flex-end; */
+    max-width: 170px;
+    /* height: 30px; */
+    padding: 1em;
+    border-radius: 0.5em ;
+    
+    font-family: 'Barlow', sans-serif;
+    font-size: 16px;
+    text-transform: uppercase;
+    background-color: rgb(241, 240, 240);
+    color: #162542;
+    font-weight: 900;
+    border: 1px solid rgb(241, 240, 240)
+    
+
+}
+
+button:active {
+    background-color: #162542;
+    color:white;
+}
+
+.button-class {
+    background-color: #f16718 ;
+    color: white;
+}
+
+.button-class:active {
+    background-color: #ff9b62;
+    color: white;
+}
+
+main {
+    margin-top: 3em;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 0.5fr 0.5fr 0.5fr;
+    gap: 2em;
+    grid-template-areas: 
+    "head head keyboard keyboard"
+    "overlay glass glass side"
+    "laptop wireless battery rgb";
+}
+
+.light{
+grid-column: -2/-1;
+grid-area: rgb;
+}
+
+.battery {
+    grid-row: 3/4;
+    grid-column: -3/-2;
+    grid-area: battery;
+}
+.bluetooth {
+    grid-row: 3/4;
+    grid-column: -4/-3;
+    grid-area: wireless;
+}
+
+.compact {
+    grid-row: 3/4;
+    grid-column: -5/-4;
+    grid-area: laptop;
+}
+
+.middle-section {
+    grid-row: 2/3;
+    grid-column: 4/5;
+    align-self: center;
+    max-width: 60%;
+    grid-area: side;
+  
+}
+.middle-section > p {
+    color: #7b8bad;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 2em;
+    
+}
+
+.top-section {
+    grid-column: span 2;
+    grid-area: head;
+    
+    text-align: left;
+    /* background-image: url(pattern-square.svg);
+    background-repeat: no-repeat; */
+}
+
+.key-board {
+    grid-column: span 2;
+    grid-area: keyboard;
+ 
+    
+    
+}
+.key-board > img {
+    border-radius: 3em;
+    max-width: 100%;
+    
+}
+
+.keyboard-glass {
+    grid-column: span 2;
+    grid-area: glass;
+    
+}
+
+.keyboard-glass > img {
+    border-radius: 3em;
+    /* width: 83%; */
+}   
+/* To make images with overlay color */
+.keyboard-phone {
+    background-image: url(image-phone-and-keyboard.jpg);
+    background-repeat: no-repeat;
+    border-radius: 3em;
+    background-size: cover;
+    grid-area: overlay;
+    width: 100%;
+    /* background-attachment: fixed; */
+}
+/* To make images with overlay color */
+div.image-overlay {
+    background-color: #ff9b62;
+    opacity: 0.75;
+    mix-blend-mode: multiply;
+    border-radius: 3em;
+    height: 100%;
+    
+}
+  
+
+
+
+.cards {
+    text-align: left;
+}
+
+.cards > p {
+    color: #7b8bad;
+    font-size: 16px;
+    font-size: 500;
+    font-style: normal;
+    line-height: 1.5em;
+}
+
+.cards > img {
+ width: 10%;
+
+}
+h2 {
+    text-transform: uppercase;
+    font-size: 36px;
+    color: #162542;
+    line-height: 1em;
+    margin-bottom: 0.2em;
+}
+
+h3 {
+    text-transform: uppercase;
+    margin-bottom: 0.5em;
+    font-size: 24px;
+    color: #162542;
+    max-width: 50%;
+}
+
+
+footer {
+    text-align: center;
+    color:#7b8bad;
+    font-size: 16px;
+   
+}
+
+p > span {
+    font-weight: 700;
+}
+
+/* Tablet version */
+@media screen and (max-width: 1024px) {
+    main{
+          display: grid;
+          grid-template-columns:1fr 1fr;
+          max-width: 100%;
+          grid-template-areas:
+          "head  keyboard "
+          "overlay  glass "
+          "side  side "
+          "laptop  wireless"
+          "battery  rgb";
+         
+    }  
+
+    .middle-section{
+        display: flex;
+        max-width: 100%;
+        align-items: center;
+        gap: 3em;
+        margin: 4em 0 4em 0
+    }
+
+    .cards {
+        margin-bottom: 4em;
+    }
+
+    .keyboard-phone {
+        /* max-width: 60%; */
+        width: 200px;
+    }
+    .cards> p{
+        max-width: 85%;
+        
+    }
+    .key-board{
+        width: 140%
+    }
+    .top-section {
+        align-self: center;
+        
+    }
+    .top-section > p {
+        max-width:90%;
+        margin-bottom: 2em;
+    }
+    .keyboard-glass{
+        position: relative;
+        right: 12em;
+        width: 190%;
+    }
+    .keyboard-phone {
+        max-width: 60%;
+    }
+         }
+
+
+
+
+
